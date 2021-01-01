@@ -12,7 +12,7 @@
             <TypingAnimation  v-if="currentFlag >= 7 && currentFlag <= 13" size="small" flag="SpainFlag" text="Hola" />
             <TypingAnimation  v-if="currentFlag >= 8 && currentFlag <= 14" size="small" flag="ChinaFlag" text="你好" />
             <TypingAnimation  v-if="currentFlag >= 9 && currentFlag <= 15" size="small" flag="JapanFlag" text="こんにちは" />
-            <div class="Next">
+            <div class="Next" @click="goNextPage">
                 <p> Let's continue the Voyage! </p>
                 <div class="Arrows">
                     <Next class="NextArrow" />
@@ -50,6 +50,12 @@ import Next from '@/assets/Icons/Next.svg'
                 else{
                     store.commit('FlagIncrement')
                 }
+            },
+            goNextPage(){
+                window.scrollTo({
+                    top: window.innerHeight,
+                    behavior: 'smooth'
+                    })
             }
         },
         computed: mapState({
@@ -62,11 +68,11 @@ import Next from '@/assets/Icons/Next.svg'
 .Greetings {
     width: 100vw;
     height: 100vh;
-    background: rgb(49,35,57);
-    background: -moz-linear-gradient(0deg, rgba(49,35,57,1) 0%, rgba(44,40,46,1) 9%, rgba(0,0,0,1) 100%);
-    background: -webkit-linear-gradient(0deg, rgba(49,35,57,1) 0%, rgba(44,40,46,1) 9%, rgba(0,0,0,1) 100%);
-    background: linear-gradient(0deg, rgba(49,35,57,1) 0%, rgba(44,40,46,1) 9%, rgba(0,0,0,1) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#312339",endColorstr="#000000",GradientType=1);
+    background: rgb(20,2,29);
+    background: -moz-radial-gradient(circle, rgba(20,2,29,1) 0%, rgba(16,1,25,1) 62%, rgba(21,3,31,1) 90%, rgba(15,2,22,1) 100%);
+    background: -webkit-radial-gradient(circle, rgba(20,2,29,1) 0%, rgba(16,1,25,1) 62%, rgba(21,3,31,1) 90%, rgba(15,2,22,1) 100%);
+    background: radial-gradient(circle, rgba(20,2,29,1) 0%, rgba(16,1,25,1) 62%, rgba(21,3,31,1) 90%, rgba(15,2,22,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#14021d",endColorstr="#0f0216",GradientType=1);
 }
 
 .Flags {

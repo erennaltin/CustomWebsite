@@ -1,20 +1,20 @@
 <template>
     <div class="Application">
         <Greetings class="AppGreetings"/>
-        <GLTFCamera />
+        <Introduction />        
     </div>
 </template>
 
 <script>
 import Greetings from '../components/Greetings.vue'
-import GLTFCamera from '../components/GLTFCamera.vue'
+import Introduction from '../components/Introduction.vue'
     
     
 export default {
     name:'Application',
     components: { 
         Greetings,
-        GLTFCamera  
+        Introduction
         },
     }
 </script>
