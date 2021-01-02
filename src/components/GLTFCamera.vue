@@ -2,7 +2,7 @@
 <template>
   <div class="GLTFCamera">
     <div id="scene-container" ref="sceneContainer"></div>
-    <p id="Loader" v-if="!finish"> The spaceship is preparing for the mission ... </p>
+    <p id="Loader" v-if="!finish"> Textures will be uploaded according to the speed of your internet connection! </p>
   </div>
 </template>
 
@@ -10,6 +10,9 @@
 import * as THREE from 'three'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
+import { OBJLoader } from 'three/examples/jsm/loaders/OBJLoader'
+// import { MTLLoader } from 'three/examples/jsm/loaders/MTLLoader'
+// import { DDSLoader } from 'three/examples/jsm/loaders/DDSLoader.js';
 import { mapState } from 'vuex';
 // import Stats from 'stats.js'
 
@@ -20,7 +23,8 @@ let controls;
 let renderer;
 // let stats;
 let loader;
-
+let loader2;
+// let mtl;
 
 
 
@@ -93,11 +97,30 @@ export default {
       camera.aspect = container.clientWidth / container.clientHeight
       camera.updateProjectionMatrix()
       renderer.setSize(container.clientWidth, container.clientHeight)
+
+      // DOKUNMA!!!!
+      
+   
+      loader2 = new OBJLoader()
+      loader2.load(
+        // resource URL
+        '/assets/Models/space-ship.obj',
+        // called when resource is loaded
+        function ( object ) {
+          
+          scene.add( object );
+          object.rotation.set(0, 3.5, 0)
+          object.scale.set(1.5, 1.5, 1.5)
+        },
+        undefined,
+        undefined
+        )
       loader = new GLTFLoader()      
       loader.load(
         '/assets/Models/space-ship.glb',
         async (gltf) => {
           // gltf.userData.name = 'SpaceShip'
+          scene.remove( scene.children[3] )
           await scene.add(gltf.scene)
           this.finish = true
           this.ship = gltf.scene
@@ -142,31 +165,31 @@ export default {
   },
   mounted () {
     this.init()
-    setTimeout(() => {
-      if(!this.finished){
-        document.querySelector('#Loader').innerHTML = 'The crew is on duty ...'
-      }
-    }, 2000);
-    setTimeout(() => {
-      if(!this.finished){
-        document.querySelector('#Loader').innerHTML = 'the System is checking ...'
-      }
-    }, 4000);
-    setTimeout(() => {
-      if(!this.finished){
-        document.querySelector('#Loader').innerHTML = 'Final preparations are being made ...'
-      }
-    }, 6000);
-    setTimeout(() => {
-      if(!this.finished){
-        document.querySelector('#Loader').innerHTML = 'Engines are firing ...'
-      }
-    }, 8000);
-    setTimeout(() => {
-      if(!this.finished){
-        document.querySelector('#Loader').innerHTML = 'No way! We destroyed by the enemies! Please reload the page and prepare the ship again!'
-      }
-    }, 10000);
+    // setTimeout(() => {
+    //   if(!this.finished){
+    //     document.querySelector('#Loader').innerHTML = 'The crew is on duty ...'
+    //   }
+    // }, 2000);
+    // setTimeout(() => {
+    //   if(!this.finished){
+    //     document.querySelector('#Loader').innerHTML = 'the System is checking ...'
+    //   }
+    // }, 4000);
+    // setTimeout(() => {
+    //   if(!this.finished){
+    //     document.querySelector('#Loader').innerHTML = 'Final preparations are being made ...'
+    //   }
+    // }, 6000);
+    // setTimeout(() => {
+    //   if(!this.finished){
+    //     document.querySelector('#Loader').innerHTML = 'Engines are firing ...'
+    //   }
+    // }, 8000);
+    // setTimeout(() => {
+    //   if(!this.finished){
+    //     document.querySelector('#Loader').innerHTML = 'No way! We destroyed by the enemies! Please reload the page and prepare the ship again!'
+    //   }
+    // }, 10000);
   }
 }
 </script>
@@ -190,11 +213,11 @@ export default {
 
 #Loader {
   position: absolute;
-  top: 50vh;
+  top: 10vh;
   right: 40vw;
   text-align: center;
   width: 20vw;
-  font-size: 25px;
+  font-size: 15px;
   font-weight: bold;
   animation: 2s changeOpacity;
   animation-iteration-count: infinite;
