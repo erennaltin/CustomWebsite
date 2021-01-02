@@ -3,17 +3,17 @@
 </template>
 
 <script>
-import SwitzerlandFlag from '@/assets/Icons/SwitzerlandFlag.svg'
-import TurkeyFlag from '@/assets/Icons/TurkeyFlag.svg'
-import GermanyFlag from '@/assets/Icons/GermanyFlag.svg'
-import UnitedStatesFlag from '@/assets/Icons/UnitedStatesFlag.svg'
-import FranceFlag from '@/assets/Icons/FranceFlag.svg'
-import SpainFlag from '@/assets/Icons/SpainFlag.svg'
-import ItalyFlag from '@/assets/Icons/ItalyFlag.svg'
-import UnitedKingdomFlag from '@/assets/Icons/UnitedKingdomFlag.svg'
-import JapanFlag from '@/assets/Icons/JapanFlag.svg'
-import NetherlandsFlag from '@/assets/Icons/NetherlandsFlag.svg'
-import ChinaFlag from '@/assets/Icons/ChinaFlag.svg'
+import SwitzerlandFlag from './SVGs/SwitzerlandFlag.svg'
+import TurkeyFlag from './SVGs/TurkeyFlag.svg'
+import GermanyFlag from './SVGs/GermanyFlag.svg'
+import UnitedStatesFlag from './SVGs/UnitedStatesFlag.svg'
+import FranceFlag from './SVGs/FranceFlag.svg'
+import SpainFlag from './SVGs/SpainFlag.svg'
+import ItalyFlag from './SVGs/ItalyFlag.svg'
+import UnitedKingdomFlag from './SVGs/UnitedKingdomFlag.svg'
+import JapanFlag from './SVGs/JapanFlag.svg'
+import NetherlandsFlag from './SVGs/NetherlandsFlag.svg'
+import ChinaFlag from './SVGs/ChinaFlag.svg'
 
 
 

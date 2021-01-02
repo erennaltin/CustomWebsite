@@ -28,7 +28,7 @@
 import store from '../store'
 import { mapState } from 'vuex';
 import TypingAnimation from '@/components/TypingAnimation.vue'
-import Next from '@/assets/Icons/Next.svg'
+import Next from './SVGs/Next.svg'
     export default {
         name:'Greetings',
         store,
