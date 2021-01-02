@@ -39,7 +39,7 @@ import Next from './SVGs/Next.svg'
         mounted(){
          setInterval(() =>{
             this.changeFlags()
-         },1000000)
+         },1000)
          
         },
         methods: {

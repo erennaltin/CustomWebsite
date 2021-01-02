@@ -35,7 +35,7 @@ import Icon from './Icon'
         mounted() {
             document.querySelector(`#${this.flag}`).style.setProperty('--length',this.text.length)
             document.querySelector(`#${this.flag}`).style.setProperty('--lengthch',this.text.length + 'ch')
-            setTimeout(()=> {this.runAnimation()},10000)
+            setTimeout(()=> {this.runAnimation()},2000)
         },
         data() {
             return {
@@ -86,6 +86,9 @@ import Icon from './Icon'
     }
     95%{
         opacity: 1;
+    }
+    100% {
+        opacity: 0;
     }
 
 }
