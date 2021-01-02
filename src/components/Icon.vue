@@ -1,5 +1,5 @@
 <template>
-        <component :class="sizeClass" :is="tag" id="svg" />
+        <component :class="sizeClass" :is="tag"  />
 </template>
 
 <script>
