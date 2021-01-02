@@ -184,8 +184,8 @@ import Next from './SVGs/Next.svg'
         opacity: 100%;
     }
 
-    100% {
-        opacity: 0%;
-    }
+    // 100% {
+    //     opacity: 0%;
+    // }
 }
 </style>

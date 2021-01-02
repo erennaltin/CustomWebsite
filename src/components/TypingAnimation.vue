@@ -1,6 +1,6 @@
 <template>
     <div class="TypingAnimation" :id=" flag ">
-        <Icon v-if="mode == 'flag'" :tag="flag" :size="size" />
+        <Icon v-if="mode === 'flag'" :tag="flag" :size="size" />
         <h1 :class="fontSize" v-else> {{ text }} </h1>
 
     </div>
@@ -87,9 +87,7 @@ import Icon from './Icon'
     95%{
         opacity: 1;
     }
-    100% {
-        opacity: 0;
-    }
+
 }
 
 .small {

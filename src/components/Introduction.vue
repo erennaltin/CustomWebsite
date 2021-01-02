@@ -177,15 +177,12 @@ export default {
         opacity:0;
         width:0;
     }
-    10½ {
+    10% {
         opacity:1;
     }
     90% {
         opacity: 1;
         width: 42ch;
-    }
-    100% {
-        opacity:0
     }
 }
 </style>
